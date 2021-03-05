@@ -1,0 +1,105 @@
+\begin{theindex}
+
+  \item {is\_compare\_op}
+    \subitem {parser.c}, \hyperpage{8}
+  \item {is\_expression}
+    \subitem {parser.c}, \hyperpage{8}
+  \item {is\_instruction}
+    \subitem {parser.c}, \hyperpage{8}
+  \item {is\_operation\_param}
+    \subitem {parser.c}, \hyperpage{9}
+  \item {isColor}
+    \subitem {scanner.c}, \hyperpage{13}
+    \subitem {scanner.h}, \hyperpage{18}
+  \item {isKeyword}
+    \subitem {scanner.c}, \hyperpage{15}
+    \subitem {scanner.h}, \hyperpage{18}
+  \item {isSpace}
+    \subitem {scanner.c}, \hyperpage{15}
+    \subitem {scanner.h}, \hyperpage{18}
+  \item {isTag}
+    \subitem {scanner.c}, \hyperpage{15}
+    \subitem {scanner.h}, \hyperpage{19}
+
+  \indexspace
+
+  \item {match}
+    \subitem {parser.c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {next\_token}
+    \subitem {scanner.c}, \hyperpage{16}
+    \subitem {scanner.h}, \hyperpage{19}
+
+  \indexspace
+
+  \item {operations\_routine}
+    \subitem {parser.c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {parse\_declare}
+    \subitem {parser.c}, \hyperpage{9}
+  \item {parse\_graph}
+    \subitem {parser.c}, \hyperpage{10}
+  \item {parse\_graph\_type}
+    \subitem {parser.c}, \hyperpage{10}
+  \item {parse\_main}
+    \subitem {parser.c}, \hyperpage{10}
+  \item {parse\_operation\_call}
+    \subitem {parser.c}, \hyperpage{10}
+  \item {parse\_operations}
+    \subitem {parser.c}, \hyperpage{10}
+  \item {parse\_program}
+    \subitem {parser.c}, \hyperpage{11}
+    \subitem {parser.h}, \hyperpage{12}
+  \item {parse\_subgraph}
+    \subitem {parser.c}, \hyperpage{11}
+  \item {parser.c}, \hyperpage{7}
+    \subitem {is\_compare\_op}, \hyperpage{8}
+    \subitem {is\_expression}, \hyperpage{8}
+    \subitem {is\_instruction}, \hyperpage{8}
+    \subitem {is\_operation\_param}, \hyperpage{9}
+    \subitem {match}, \hyperpage{9}
+    \subitem {operations\_routine}, \hyperpage{9}
+    \subitem {parse\_declare}, \hyperpage{9}
+    \subitem {parse\_graph}, \hyperpage{10}
+    \subitem {parse\_graph\_type}, \hyperpage{10}
+    \subitem {parse\_main}, \hyperpage{10}
+    \subitem {parse\_operation\_call}, \hyperpage{10}
+    \subitem {parse\_operations}, \hyperpage{10}
+    \subitem {parse\_program}, \hyperpage{11}
+    \subitem {parse\_subgraph}, \hyperpage{11}
+    \subitem {syntax\_error}, \hyperpage{11}
+    \subitem {token\_error\_map}, \hyperpage{12}
+  \item {parser.h}, \hyperpage{12}
+    \subitem {parse\_program}, \hyperpage{12}
+
+  \indexspace
+
+  \item {scanner.c}, \hyperpage{13}
+    \subitem {isColor}, \hyperpage{13}
+    \subitem {isKeyword}, \hyperpage{15}
+    \subitem {isSpace}, \hyperpage{15}
+    \subitem {isTag}, \hyperpage{15}
+    \subitem {next\_token}, \hyperpage{16}
+    \subitem {token\_map}, \hyperpage{16}
+  \item {scanner.h}, \hyperpage{16}
+    \subitem {isColor}, \hyperpage{18}
+    \subitem {isKeyword}, \hyperpage{18}
+    \subitem {isSpace}, \hyperpage{18}
+    \subitem {isTag}, \hyperpage{19}
+    \subitem {next\_token}, \hyperpage{19}
+  \item {syntax\_error}
+    \subitem {parser.c}, \hyperpage{11}
+
+  \indexspace
+
+  \item {token\_error\_map}
+    \subitem {parser.c}, \hyperpage{12}
+  \item {token\_map}
+    \subitem {scanner.c}, \hyperpage{16}
+  \item {TokenData}, \hyperpage{5}
+
+\end{theindex}

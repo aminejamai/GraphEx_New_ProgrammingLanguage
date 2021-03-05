@@ -1,0 +1,166 @@
+Graph -> id { TYPE SUBGRAPH DECLARE } Graph
+
+Graph -> main { TYPE SUBGRAPH DECLARE OPERATIONS }
+
+Graph -> ''
+
+TYPE -> %type { TYPE' }
+
+TYPE' -> directed
+
+TYPE' -> undirected
+
+SUBGRAPH -> %subgraph id id OTHERID INSTANCE
+
+SUBGRAPH -> ''
+
+INSTANCE -> id id OTHERID INSTANCE
+
+INSTANCE -> ''
+
+OTHERID -> , ID OTHERID
+
+OTHERID -> ;
+
+DECLARE -> %declare ID CHILD CHILDS
+
+CHILD -> --> ID CHILD'
+
+CHILD -> ;
+
+CHILD' -> POIDS CHILD
+
+CHILD' -> ( ID' ) POIDS ;
+
+ID' -> ID
+
+ID' -> ''
+
+POIDS -> , chiffre
+
+POIDS -> ''
+
+CHILDS -> ID CHILD CHILDS
+
+CHILDS -> ''
+
+OPERATIONS -> %operation INST ; INSTS
+
+INSTS -> INST ; INSTS
+
+INSTS -> TRAVERSER INSTS
+
+INSTS -> IF INSTS
+
+INSTS -> ''
+
+INST -> operationName ( PARAMS ) 
+
+PARAMS -> ID' , PARAMS
+
+PARAMS -> #color , PARAMS
+
+PARAMS -> INST , PARAMS 
+
+IF -> if ( COND ) { INSTS }
+
+COND -> EXPR OP EXPR
+
+EXPR -> chiffre
+
+EXPR -> INST
+
+OP -> =
+
+OP -> <>
+
+OP -> <
+ 
+OP -> >
+
+OP -> <=
+
+OP -> >=
+
+TRAVERSER -> traverse ( METHOD , ( ID , ID , ID ) => { INSTS } ) ;
+
+METHOD -> dfs
+
+METHOD -> bfs 
+
+ID -> _ APLHANUM SUITE
+
+ID -> lettre SUITE
+
+ALPHANUM -> lettre
+
+ALPHANUM -> chiffre
+
+SUITE -> lettre SUITE
+
+SUITE -> chiffre SUITE
+
+SUITE -> ''
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Graph -> ID (( TYPE SUBGRAPH DECLARE )) Graph
+       | main (( TYPE SUBGRAPH DECLARE OPERATIONS ))
+       | .
+TYPE -> percenttype (( TYPE' )).
+TYPE' -> directed
+       | undirected.
+SUBGRAPH -> percentsubgraph ID ID OTHERID INSTANCE
+          | .
+INSTANCE -> ID ID OTHERID INSTANCE
+          | .
+OTHERID -> comma ID OTHERID
+         | ;.
+DECLARE -> percentdeclare ID CHILD CHILDS.
+CHILD -> linkarrow ID CHILD'
+       | ;.
+CHILD' -> POIDS CHILD
+        | ( ID' ) POIDS ;.
+ID' -> ID
+     | .
+POIDS -> comma chiffre
+      | .
+CHILDS -> ID CHILD CHILDS
+        | .
+OPERATIONS -> percentoperation INST ; INSTS.
+INSTS -> INST ; INSTS
+       | TRAVERSER INSTS
+       | IF INSTS
+       | .
+INST -> operationName ( PARAMS ). 
+PARAMS -> ID' comma PARAMS
+        | #color comma PARAMS
+        | INST comma PARAMS.
+IF -> if ( COND ) (( INSTS )).
+COND -> EXPR OP EXPR.
+EXPR -> chiffre
+      | INST.
+OP -> eq
+    | neq
+    | lt
+    | bt
+    | leq
+    | beq.
+TRAVERSER -> traverse ( METHOD comma ( ID comma ID comma ID ) equalarrow (( INSTS )) ) ;.
+METHOD -> dfs
+        | bfs.
+ID -> _ SUITE
+    | lettre SUITE.
+SUITE -> lettre SUITE
+       | chiffre SUITE
+       | .
+
+// Correction
+INST -> operationName ( PARAMS ).
+PARAMS -> PARAMS'
+        | .
+PARAMS' -> id OTHERPARAM
+         | #color OTHERPARAM
+         | INST OTHERPARAM.
+OTHERPARAM -> comma PARAMS'
+            | .
+

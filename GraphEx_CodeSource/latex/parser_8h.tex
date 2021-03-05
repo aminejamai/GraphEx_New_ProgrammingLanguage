@@ -1,0 +1,37 @@
+\hypertarget{parser_8h}{}\doxysection{parser.\+h File Reference}
+\label{parser_8h}\index{parser.h@{parser.h}}
+
+
+Parser header file.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{parser_8h_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}{parse\+\_\+program}} ()
+\begin{DoxyCompactList}\small\item\em Parses the next token and calls \mbox{\hyperlink{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}{parse\+\_\+graph()}} or \mbox{\hyperlink{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}{parse\+\_\+main()}} correspondingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{parser_8h_a4f7e99ff24896db736646b63de048297}\label{parser_8h_a4f7e99ff24896db736646b63de048297}} 
+const char $\ast$const {\bfseries keywords} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parser header file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8h_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}\label{parser_8h_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}} 
+\index{parser.h@{parser.h}!parse\_program@{parse\_program}}
+\index{parse\_program@{parse\_program}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{parse\_program()}{parse\_program()}}
+{\footnotesize\ttfamily void parse\+\_\+program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses the next token and calls \mbox{\hyperlink{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}{parse\+\_\+graph()}} or \mbox{\hyperlink{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}{parse\+\_\+main()}} correspondingly. 
+
+If the parsed token is neither an identifier nor a main token, an error is printed and the parser halts. 

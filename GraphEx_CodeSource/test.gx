@@ -1,0 +1,26 @@
+Subgraph {
+    %TYpe { directed }
+    %DECLARE
+    node1;
+    node2 -> n3, 43;
+}
+
+mAIn {
+    %type { Directed }
+    %SUBGRAPH
+    SubGraph m1, m2;
+    otherGraph: m3;
+    %declare
+    n1 -> m1(node2), 3;
+    n2 -> m2(), 7;
+    %operations
+    Traverse(Subgraph, dfs, (startNode, endNode, edge) => {
+        If (6 > getWeight(startNode)) {
+            Traverse(bfs, (start, end, e) => {
+                colorier(start);
+            });
+        }
+        getWeight(getNode(dijkstra(m2)));
+    });
+    bellman();
+}

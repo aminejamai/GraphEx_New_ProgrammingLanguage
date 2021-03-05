@@ -1,0 +1,196 @@
+\hypertarget{scanner_8h}{}\doxysection{scanner.\+h File Reference}
+\label{scanner_8h}\index{scanner.h@{scanner.h}}
+
+
+Scanner header file.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_token_data}{Token\+Data}}
+\begin{DoxyCompactList}\small\item\em Defined type based on a struct holding various informations on a token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scanner_8h_a9d7cd607666e4df0a7bae07186429b9a}\label{scanner_8h_a9d7cd607666e4df0a7bae07186429b9a}} 
+\#define {\bfseries TOKEN\+\_\+\+COUNT}~29
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scanner_8h_aa520fbf142ba1e7e659590c07da31921}\label{scanner_8h_aa520fbf142ba1e7e659590c07da31921}} 
+enum \mbox{\hyperlink{scanner_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \{ \newline
+{\bfseries ID\+\_\+\+TOKEN}
+, {\bfseries NUM\+\_\+\+TOKEN}
+, {\bfseries OP\+\_\+\+TOKEN}
+, {\bfseries CP\+\_\+\+TOKEN}
+, \newline
+{\bfseries EQ\+\_\+\+TOKEN}
+, {\bfseries NEQ\+\_\+\+TOKEN}
+, {\bfseries GT\+\_\+\+TOKEN}
+, {\bfseries LT\+\_\+\+TOKEN}
+, \newline
+{\bfseries LEQ\+\_\+\+TOKEN}
+, {\bfseries BEQ\+\_\+\+TOKEN}
+, {\bfseries OB\+\_\+\+TOKEN}
+, {\bfseries CB\+\_\+\+TOKEN}
+, \newline
+{\bfseries MAIN\+\_\+\+TOKEN}
+, {\bfseries PTYPE\+\_\+\+TOKEN}
+, {\bfseries PDECLARE\+\_\+\+TOKEN}
+, {\bfseries PSUBGRAPH\+\_\+\+TOKEN}
+, \newline
+{\bfseries POPERATIONS\+\_\+\+TOKEN}
+, {\bfseries GTYPE\+\_\+\+TOKEN}
+, {\bfseries EDGE\+\_\+\+TOKEN}
+, {\bfseries COMMA\+\_\+\+TOKEN}
+, \newline
+{\bfseries SEMICOLON\+\_\+\+TOKEN}
+, {\bfseries COLOR\+\_\+\+TOKEN}
+, {\bfseries IF\+\_\+\+TOKEN}
+, {\bfseries LOOP\+\_\+\+TOKEN}
+, \newline
+{\bfseries OPERATION\+\_\+\+TOKEN}
+, {\bfseries ARROW\+\_\+\+TOKEN}
+, {\bfseries GSEARCH\+\_\+\+TOKEN}
+, {\bfseries COLON\+\_\+\+TOKEN}
+, \newline
+{\bfseries EOF\+\_\+\+TOKEN}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the different tokens that constitute the Graph\+Ex grammar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{scanner_8h_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}{next\+\_\+token}} ()
+\begin{DoxyCompactList}\small\item\em Keeps count of the character in the current line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_aa047364d8a27663123a975a2275e92c5}\label{scanner_8h_aa047364d8a27663123a975a2275e92c5}} 
+void \mbox{\hyperlink{scanner_8h_aa047364d8a27663123a975a2275e92c5}{read\+Word}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next word token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8h_aae47960a17b55883b66a87247e88578d}{is\+Keyword}} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a keyword or an identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_ac63f817c96b69f40292bb90c33119338}\label{scanner_8h_ac63f817c96b69f40292bb90c33119338}} 
+void \mbox{\hyperlink{scanner_8h_ac63f817c96b69f40292bb90c33119338}{read\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next number token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_a05b6f223f8a45e45b803e88c46e639c5}\label{scanner_8h_a05b6f223f8a45e45b803e88c46e639c5}} 
+void \mbox{\hyperlink{scanner_8h_a05b6f223f8a45e45b803e88c46e639c5}{read\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next tag token (\%...) in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8h_af54d48f9963a4edb713d5ce6cb894955}{is\+Tag}} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a valid tag token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_aeb621b18b255062a9fcb444f0685c467}\label{scanner_8h_aeb621b18b255062a9fcb444f0685c467}} 
+void \mbox{\hyperlink{scanner_8h_aeb621b18b255062a9fcb444f0685c467}{read\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next color token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8h_a8f84c24902d28a5ce221f186b94fe8c3}{is\+Color}} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a valid color token. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8h_a54c81877f7ebfc6d49cccb135b31768c}{is\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current character is a space and increments CURRENT\+\_\+\+COLUMN and CURRENT\+\_\+\+ROW accordingly. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_a00359a1573f1b3c83d22a583e280cd20}\label{scanner_8h_a00359a1573f1b3c83d22a583e280cd20}} 
+void \mbox{\hyperlink{scanner_8h_a00359a1573f1b3c83d22a583e280cd20}{read\+Special\+Char}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next special character and stores the data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_ad71fc33d5c11c86abe13607dad004417}\label{scanner_8h_ad71fc33d5c11c86abe13607dad004417}} 
+void \mbox{\hyperlink{scanner_8h_ad71fc33d5c11c86abe13607dad004417}{generate\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Prints the lexical error with the error line and column mention. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scanner_8h_a11c70f99235c835e701c5f6f01d10ded}\label{scanner_8h_a11c70f99235c835e701c5f6f01d10ded}} 
+\mbox{\hyperlink{struct_token_data}{Token\+Data}} $\ast$ {\bfseries current\+\_\+token}
+\item 
+\mbox{\Hypertarget{scanner_8h_ab21803b83d0325900da68c354408ffc7}\label{scanner_8h_ab21803b83d0325900da68c354408ffc7}} 
+FILE $\ast$ \mbox{\hyperlink{scanner_8h_ab21803b83d0325900da68c354408ffc7}{PROGRAM\+\_\+\+File}}
+\begin{DoxyCompactList}\small\item\em Pointer on the current token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_ad0e5e6f041ed9fd58c04a18f921f1010}\label{scanner_8h_ad0e5e6f041ed9fd58c04a18f921f1010}} 
+char \mbox{\hyperlink{scanner_8h_ad0e5e6f041ed9fd58c04a18f921f1010}{CURRENT\+\_\+\+CHAR}}
+\begin{DoxyCompactList}\small\item\em Pointer on the current file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_a5c27ee1a7e0bdb78504d780a5646675f}\label{scanner_8h_a5c27ee1a7e0bdb78504d780a5646675f}} 
+int \mbox{\hyperlink{scanner_8h_a5c27ee1a7e0bdb78504d780a5646675f}{CURRENT\+\_\+\+ROW}}
+\begin{DoxyCompactList}\small\item\em Current character in the buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8h_a43847a44065eb958f7661150003fd843}\label{scanner_8h_a43847a44065eb958f7661150003fd843}} 
+int \mbox{\hyperlink{scanner_8h_a43847a44065eb958f7661150003fd843}{CURRENT\+\_\+\+COLUMN}}
+\begin{DoxyCompactList}\small\item\em Keeps count of the current line in the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scanner header file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scanner_8h_a8f84c24902d28a5ce221f186b94fe8c3}\label{scanner_8h_a8f84c24902d28a5ce221f186b94fe8c3}} 
+\index{scanner.h@{scanner.h}!isColor@{isColor}}
+\index{isColor@{isColor}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{isColor()}{isColor()}}
+{\footnotesize\ttfamily int is\+Color (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a valid color token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type if the token is a color tag, -\/1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8h_aae47960a17b55883b66a87247e88578d}\label{scanner_8h_aae47960a17b55883b66a87247e88578d}} 
+\index{scanner.h@{scanner.h}!isKeyword@{isKeyword}}
+\index{isKeyword@{isKeyword}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{isKeyword()}{isKeyword()}}
+{\footnotesize\ttfamily int is\+Keyword (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a keyword or an identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8h_a54c81877f7ebfc6d49cccb135b31768c}\label{scanner_8h_a54c81877f7ebfc6d49cccb135b31768c}} 
+\index{scanner.h@{scanner.h}!isSpace@{isSpace}}
+\index{isSpace@{isSpace}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{isSpace()}{isSpace()}}
+{\footnotesize\ttfamily int is\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current character is a space and increments CURRENT\+\_\+\+COLUMN and CURRENT\+\_\+\+ROW accordingly. 
+
+\begin{DoxyReturn}{Returns}
+1 if the current character is a space character, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8h_af54d48f9963a4edb713d5ce6cb894955}\label{scanner_8h_af54d48f9963a4edb713d5ce6cb894955}} 
+\index{scanner.h@{scanner.h}!isTag@{isTag}}
+\index{isTag@{isTag}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{isTag()}{isTag()}}
+{\footnotesize\ttfamily int is\+Tag (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a valid tag token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type if the token is a valid tag, -\/1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8h_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}\label{scanner_8h_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}} 
+\index{scanner.h@{scanner.h}!next\_token@{next\_token}}
+\index{next\_token@{next\_token}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{next\_token()}{next\_token()}}
+{\footnotesize\ttfamily void next\+\_\+token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Keeps count of the character in the current line. 
+
+Keeps count of the character in the current line. 

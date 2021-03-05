@@ -1,0 +1,274 @@
+\hypertarget{parser_8c}{}\doxysection{parser.\+c File Reference}
+\label{parser_8c}\index{parser.c@{parser.c}}
+
+
+Parser source file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}scanner.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}{parse\+\_\+subgraph}} ()
+\begin{DoxyCompactList}\small\item\em Parses subgraphs declarations if next token matches subgraph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_a1de16093f3e4902f5629cdcc5b53632a}{parse\+\_\+declare}} ()
+\begin{DoxyCompactList}\small\item\em Parses nodes \& edges declarations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}{parse\+\_\+main}} ()
+\begin{DoxyCompactList}\small\item\em Parses a main block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}{parse\+\_\+graph}} ()
+\begin{DoxyCompactList}\small\item\em Parses a graph declaration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_8c_a5706cc2de957448e1e16bb87624f6433}{syntax\+\_\+error}} (const \mbox{\hyperlink{scanner_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} expected\+\_\+token)
+\begin{DoxyCompactList}\small\item\em Prints the syntax error corresponding to the expected type with the error line and column mention. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_a2942fc418340f1e1ed0bf0fdd9da8b35}{match}} (const \mbox{\hyperlink{scanner_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} type\+\_\+to\+\_\+match)
+\begin{DoxyCompactList}\small\item\em Prints the syntax error corresponding to the expected type with the error line and column mention. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_aeeffc5568f9e03285a66fd4433d4c6e2}{is\+\_\+instruction}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current token is a valid instruction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_a714951c341138c20e7e1d519acfd24ab}{is\+\_\+operation\+\_\+param}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current token is a valid operation parameter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_aaccc4d134f5153af02898653238efc8f}{is\+\_\+expression}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current token is a valid condition expression. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_af553e05e13673d08586e56d9f0c1f3e2}{is\+\_\+compare\+\_\+op}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current token is a valid comparison operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_8c_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}{parse\+\_\+program}} ()
+\begin{DoxyCompactList}\small\item\em Parses the next token and calls \mbox{\hyperlink{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}{parse\+\_\+graph()}} or \mbox{\hyperlink{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}{parse\+\_\+main()}} correspondingly. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_aae67ffd67dfe5058efbd2de405d49cbc}{parse\+\_\+graph\+\_\+type}} ()
+\begin{DoxyCompactList}\small\item\em Parses the graph type (type) delcaration and calls the \mbox{\hyperlink{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}{parse\+\_\+subgraph()}} function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_ae422fc9c6e041413c64fe764d3478085}{parse\+\_\+operation\+\_\+call}} ()
+\begin{DoxyCompactList}\small\item\em Parses a single operation call, stoping at the closing parenthesis token. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_afa767c128adabc59517bf82e9f50b732}{operations\+\_\+routine}} ()
+\begin{DoxyCompactList}\small\item\em Parses successive valid instructions (operation call, if clause or traverse clause). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8c_a8bb3db0b514ab46ce3b4500a907a8b02}{parse\+\_\+operations}} ()
+\begin{DoxyCompactList}\small\item\em Parses an operations block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \mbox{\hyperlink{parser_8c_a2a61abaa48b575e82b36932edbf0d559}{token\+\_\+error\+\_\+map}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Constant char$\ast$ array for mapping the token type to the corresponding error name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parser source file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8c_af553e05e13673d08586e56d9f0c1f3e2}\label{parser_8c_af553e05e13673d08586e56d9f0c1f3e2}} 
+\index{parser.c@{parser.c}!is\_compare\_op@{is\_compare\_op}}
+\index{is\_compare\_op@{is\_compare\_op}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{is\_compare\_op()}{is\_compare\_op()}}
+{\footnotesize\ttfamily int is\+\_\+compare\+\_\+op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current token is a valid comparison operator. 
+
+\begin{DoxyReturn}{Returns}
+1 if valid comparison operator, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_aaccc4d134f5153af02898653238efc8f}\label{parser_8c_aaccc4d134f5153af02898653238efc8f}} 
+\index{parser.c@{parser.c}!is\_expression@{is\_expression}}
+\index{is\_expression@{is\_expression}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{is\_expression()}{is\_expression()}}
+{\footnotesize\ttfamily int is\+\_\+expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current token is a valid condition expression. 
+
+\begin{DoxyReturn}{Returns}
+1 if valid condition expression, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_aeeffc5568f9e03285a66fd4433d4c6e2}\label{parser_8c_aeeffc5568f9e03285a66fd4433d4c6e2}} 
+\index{parser.c@{parser.c}!is\_instruction@{is\_instruction}}
+\index{is\_instruction@{is\_instruction}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{is\_instruction()}{is\_instruction()}}
+{\footnotesize\ttfamily int is\+\_\+instruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current token is a valid instruction. 
+
+\begin{DoxyReturn}{Returns}
+1 if valid instruction, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a714951c341138c20e7e1d519acfd24ab}\label{parser_8c_a714951c341138c20e7e1d519acfd24ab}} 
+\index{parser.c@{parser.c}!is\_operation\_param@{is\_operation\_param}}
+\index{is\_operation\_param@{is\_operation\_param}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{is\_operation\_param()}{is\_operation\_param()}}
+{\footnotesize\ttfamily int is\+\_\+operation\+\_\+param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current token is a valid operation parameter. 
+
+\begin{DoxyReturn}{Returns}
+1 if valid operation parameter, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a2942fc418340f1e1ed0bf0fdd9da8b35}\label{parser_8c_a2942fc418340f1e1ed0bf0fdd9da8b35}} 
+\index{parser.c@{parser.c}!match@{match}}
+\index{match@{match}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily int match (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{scanner_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{type\+\_\+to\+\_\+match }\end{DoxyParamCaption})}
+
+
+
+Prints the syntax error corresponding to the expected type with the error line and column mention. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+\_\+token} & The expected token type that was failed to match. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the current token type matchs the expected type, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_afa767c128adabc59517bf82e9f50b732}\label{parser_8c_afa767c128adabc59517bf82e9f50b732}} 
+\index{parser.c@{parser.c}!operations\_routine@{operations\_routine}}
+\index{operations\_routine@{operations\_routine}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{operations\_routine()}{operations\_routine()}}
+{\footnotesize\ttfamily int operations\+\_\+routine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses successive valid instructions (operation call, if clause or traverse clause). 
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, 1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a1de16093f3e4902f5629cdcc5b53632a}\label{parser_8c_a1de16093f3e4902f5629cdcc5b53632a}} 
+\index{parser.c@{parser.c}!parse\_declare@{parse\_declare}}
+\index{parse\_declare@{parse\_declare}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_declare()}{parse\_declare()}}
+{\footnotesize\ttfamily int parse\+\_\+declare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses nodes \& edges declarations. 
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, 1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}\label{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}} 
+\index{parser.c@{parser.c}!parse\_graph@{parse\_graph}}
+\index{parse\_graph@{parse\_graph}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_graph()}{parse\_graph()}}
+{\footnotesize\ttfamily void parse\+\_\+graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses a graph declaration. 
+
+Calls \mbox{\hyperlink{parser_8c_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}{parse\+\_\+program()}} at the end. \mbox{\Hypertarget{parser_8c_aae67ffd67dfe5058efbd2de405d49cbc}\label{parser_8c_aae67ffd67dfe5058efbd2de405d49cbc}} 
+\index{parser.c@{parser.c}!parse\_graph\_type@{parse\_graph\_type}}
+\index{parse\_graph\_type@{parse\_graph\_type}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_graph\_type()}{parse\_graph\_type()}}
+{\footnotesize\ttfamily int parse\+\_\+graph\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses the graph type (type) delcaration and calls the \mbox{\hyperlink{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}{parse\+\_\+subgraph()}} function. 
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, else returns \mbox{\hyperlink{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}{parse\+\_\+subgraph()}} value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}\label{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}} 
+\index{parser.c@{parser.c}!parse\_main@{parse\_main}}
+\index{parse\_main@{parse\_main}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_main()}{parse\_main()}}
+{\footnotesize\ttfamily void parse\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses a main block. 
+
+Calls \mbox{\hyperlink{parser_8c_a8bb3db0b514ab46ce3b4500a907a8b02}{parse\+\_\+operations()}} to parse the operations block. \mbox{\Hypertarget{parser_8c_ae422fc9c6e041413c64fe764d3478085}\label{parser_8c_ae422fc9c6e041413c64fe764d3478085}} 
+\index{parser.c@{parser.c}!parse\_operation\_call@{parse\_operation\_call}}
+\index{parse\_operation\_call@{parse\_operation\_call}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_operation\_call()}{parse\_operation\_call()}}
+{\footnotesize\ttfamily int parse\+\_\+operation\+\_\+call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses a single operation call, stoping at the closing parenthesis token. 
+
+Recursively calls itself if one of the operation parameters is also an operation.
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, 1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a8bb3db0b514ab46ce3b4500a907a8b02}\label{parser_8c_a8bb3db0b514ab46ce3b4500a907a8b02}} 
+\index{parser.c@{parser.c}!parse\_operations@{parse\_operations}}
+\index{parse\_operations@{parse\_operations}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_operations()}{parse\_operations()}}
+{\footnotesize\ttfamily int parse\+\_\+operations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses an operations block. 
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, 1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}\label{parser_8c_a6deec3fc66c8c57be8a0fe1c7cd8e2cf}} 
+\index{parser.c@{parser.c}!parse\_program@{parse\_program}}
+\index{parse\_program@{parse\_program}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_program()}{parse\_program()}}
+{\footnotesize\ttfamily void parse\+\_\+program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses the next token and calls \mbox{\hyperlink{parser_8c_ac2ddbc7dcd64c113dc9113bf638927d1}{parse\+\_\+graph()}} or \mbox{\hyperlink{parser_8c_ae9e92215b6b92f6164fa8f1616c3dc61}{parse\+\_\+main()}} correspondingly. 
+
+If the parsed token is neither an identifier nor a main token, an error is printed and the parser halts. \mbox{\Hypertarget{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}\label{parser_8c_a30817cc7a3cd8cbc8b1e112299e3a078}} 
+\index{parser.c@{parser.c}!parse\_subgraph@{parse\_subgraph}}
+\index{parse\_subgraph@{parse\_subgraph}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse\_subgraph()}{parse\_subgraph()}}
+{\footnotesize\ttfamily int parse\+\_\+subgraph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses subgraphs declarations if next token matches subgraph. 
+
+Calls \mbox{\hyperlink{parser_8c_a1de16093f3e4902f5629cdcc5b53632a}{parse\+\_\+declare()}} at the end.
+
+\begin{DoxyReturn}{Returns}
+0 if a syntax error is found, else returns \mbox{\hyperlink{parser_8c_a1de16093f3e4902f5629cdcc5b53632a}{parse\+\_\+declare()}} value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8c_a5706cc2de957448e1e16bb87624f6433}\label{parser_8c_a5706cc2de957448e1e16bb87624f6433}} 
+\index{parser.c@{parser.c}!syntax\_error@{syntax\_error}}
+\index{syntax\_error@{syntax\_error}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{syntax\_error()}{syntax\_error()}}
+{\footnotesize\ttfamily void syntax\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{scanner_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{expected\+\_\+token }\end{DoxyParamCaption})}
+
+
+
+Prints the syntax error corresponding to the expected type with the error line and column mention. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+\_\+token} & The expected token type that was failed to match. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{parser_8c_a2a61abaa48b575e82b36932edbf0d559}\label{parser_8c_a2a61abaa48b575e82b36932edbf0d559}} 
+\index{parser.c@{parser.c}!token\_error\_map@{token\_error\_map}}
+\index{token\_error\_map@{token\_error\_map}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{token\_error\_map}{token\_error\_map}}
+{\footnotesize\ttfamily const char$\ast$ const token\+\_\+error\+\_\+map\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{})"{}}, \textcolor{stringliteral}{"{}="{}}, \textcolor{stringliteral}{"{}<>"{}}, \textcolor{stringliteral}{"{}>"{}}, \textcolor{stringliteral}{"{}<"{}}, \textcolor{stringliteral}{"{}<="{}}, \textcolor{stringliteral}{"{}>="{}}, \textcolor{stringliteral}{"{}\{"{}}, \textcolor{stringliteral}{"{}\}"{}}, \textcolor{stringliteral}{"{}main"{}}, \textcolor{stringliteral}{"{}\%type"{}}, \textcolor{stringliteral}{"{}\%declare"{}}, \textcolor{stringliteral}{"{}\%subgraph"{}}, \textcolor{stringliteral}{"{}\%operations"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}directed or token undirected"{}}, \textcolor{stringliteral}{"{}-\/>"{}}, \textcolor{stringliteral}{"{},"{}}, \textcolor{stringliteral}{"{};"{}}, \textcolor{stringliteral}{"{}color"{}}, \textcolor{stringliteral}{"{}if"{}}, \textcolor{stringliteral}{"{}traverse"{}}, \textcolor{stringliteral}{"{}operation"{}}, \textcolor{stringliteral}{"{}=>"{}}, \textcolor{stringliteral}{"{}dfs or token bfs"{}}, \textcolor{stringliteral}{"{}:"{}}, \textcolor{stringliteral}{"{}EOF"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Constant char$\ast$ array for mapping the token type to the corresponding error name. 
+

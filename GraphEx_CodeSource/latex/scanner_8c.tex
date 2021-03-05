@@ -1,0 +1,156 @@
+\hypertarget{scanner_8c}{}\doxysection{scanner.\+c File Reference}
+\label{scanner_8c}\index{scanner.c@{scanner.c}}
+
+
+Scanner source file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}scanner.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{scanner_8c_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}{next\+\_\+token}} ()
+\begin{DoxyCompactList}\small\item\em Decides the next token type and calls the appropriate function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_aa047364d8a27663123a975a2275e92c5}\label{scanner_8c_aa047364d8a27663123a975a2275e92c5}} 
+void \mbox{\hyperlink{scanner_8c_aa047364d8a27663123a975a2275e92c5}{read\+Word}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next word token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8c_af426333beb066b3a5b5acca4f43fc935}{is\+Keyword}} (char $\ast$token)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a keyword or an identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_ac63f817c96b69f40292bb90c33119338}\label{scanner_8c_ac63f817c96b69f40292bb90c33119338}} 
+void \mbox{\hyperlink{scanner_8c_ac63f817c96b69f40292bb90c33119338}{read\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next number token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_a05b6f223f8a45e45b803e88c46e639c5}\label{scanner_8c_a05b6f223f8a45e45b803e88c46e639c5}} 
+void \mbox{\hyperlink{scanner_8c_a05b6f223f8a45e45b803e88c46e639c5}{read\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next tag token (\%...) in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8c_a28d9b6f4caa7e84869b752033c6a1e88}{is\+Tag}} (char $\ast$token)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a valid tag token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_aeb621b18b255062a9fcb444f0685c467}\label{scanner_8c_aeb621b18b255062a9fcb444f0685c467}} 
+void \mbox{\hyperlink{scanner_8c_aeb621b18b255062a9fcb444f0685c467}{read\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next color token in the file and stores its data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8c_a9eafe0c2bd1d33e0791d675be4aaa93a}{is\+Color}} (char $\ast$token)
+\begin{DoxyCompactList}\small\item\em Checks if the given token is a valid color token. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scanner_8c_a54c81877f7ebfc6d49cccb135b31768c}{is\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current character is a space and increments CURRENT\+\_\+\+COLUMN and CURRENT\+\_\+\+ROW accordingly. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_a00359a1573f1b3c83d22a583e280cd20}\label{scanner_8c_a00359a1573f1b3c83d22a583e280cd20}} 
+void \mbox{\hyperlink{scanner_8c_a00359a1573f1b3c83d22a583e280cd20}{read\+Special\+Char}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next special character and stores the data in the current\+\_\+token variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{scanner_8c_ad71fc33d5c11c86abe13607dad004417}\label{scanner_8c_ad71fc33d5c11c86abe13607dad004417}} 
+void \mbox{\hyperlink{scanner_8c_ad71fc33d5c11c86abe13607dad004417}{generate\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Prints the lexical error with the error line and column mention. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \mbox{\hyperlink{scanner_8c_ade10896f4371dbff6062b404bd444841}{token\+\_\+map}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Constant char$\ast$ array for mapping the token type to its string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scanner source file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scanner_8c_a9eafe0c2bd1d33e0791d675be4aaa93a}\label{scanner_8c_a9eafe0c2bd1d33e0791d675be4aaa93a}} 
+\index{scanner.c@{scanner.c}!isColor@{isColor}}
+\index{isColor@{isColor}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{isColor()}{isColor()}}
+{\footnotesize\ttfamily int is\+Color (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a valid color token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type if the token is a color tag, -\/1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8c_af426333beb066b3a5b5acca4f43fc935}\label{scanner_8c_af426333beb066b3a5b5acca4f43fc935}} 
+\index{scanner.c@{scanner.c}!isKeyword@{isKeyword}}
+\index{isKeyword@{isKeyword}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{isKeyword()}{isKeyword()}}
+{\footnotesize\ttfamily int is\+Keyword (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a keyword or an identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8c_a54c81877f7ebfc6d49cccb135b31768c}\label{scanner_8c_a54c81877f7ebfc6d49cccb135b31768c}} 
+\index{scanner.c@{scanner.c}!isSpace@{isSpace}}
+\index{isSpace@{isSpace}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{isSpace()}{isSpace()}}
+{\footnotesize\ttfamily int is\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the current character is a space and increments CURRENT\+\_\+\+COLUMN and CURRENT\+\_\+\+ROW accordingly. 
+
+\begin{DoxyReturn}{Returns}
+1 if the current character is a space character, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8c_a28d9b6f4caa7e84869b752033c6a1e88}\label{scanner_8c_a28d9b6f4caa7e84869b752033c6a1e88}} 
+\index{scanner.c@{scanner.c}!isTag@{isTag}}
+\index{isTag@{isTag}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{isTag()}{isTag()}}
+{\footnotesize\ttfamily int is\+Tag (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Checks if the given token is a valid tag token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token that has been read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding token type if the token is a valid tag, -\/1 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{scanner_8c_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}\label{scanner_8c_ac5fa4cc79bd7e2f2ec105cb3e4f6ccc8}} 
+\index{scanner.c@{scanner.c}!next\_token@{next\_token}}
+\index{next\_token@{next\_token}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{next\_token()}{next\_token()}}
+{\footnotesize\ttfamily void next\+\_\+token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decides the next token type and calls the appropriate function. 
+
+Keeps count of the character in the current line. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{scanner_8c_ade10896f4371dbff6062b404bd444841}\label{scanner_8c_ade10896f4371dbff6062b404bd444841}} 
+\index{scanner.c@{scanner.c}!token\_map@{token\_map}}
+\index{token\_map@{token\_map}!scanner.c@{scanner.c}}
+\doxysubsubsection{\texorpdfstring{token\_map}{token\_map}}
+{\footnotesize\ttfamily const char$\ast$ const token\+\_\+map\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}ID\_TOKEN"{}}, \textcolor{stringliteral}{"{}NUM\_TOKEN"{}}, \textcolor{stringliteral}{"{}OP\_TOKEN"{}}, \textcolor{stringliteral}{"{}CP\_TOKEN"{}}, \textcolor{stringliteral}{"{}EQ\_TOKEN"{}}, \textcolor{stringliteral}{"{}NEQ\_TOKEN"{}}, \textcolor{stringliteral}{"{}GT\_TOKEN"{}}, \textcolor{stringliteral}{"{}LT\_TOKEN"{}}, \textcolor{stringliteral}{"{}LEQ\_TOKEN"{}}, \textcolor{stringliteral}{"{}BEQ\_TOKEN"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}OB\_TOKEN"{}}, \textcolor{stringliteral}{"{}CB\_TOKEN"{}}, \textcolor{stringliteral}{"{}MAIN\_TOKEN"{}}, \textcolor{stringliteral}{"{}PTYPE\_TOKEN"{}}, \textcolor{stringliteral}{"{}PDECLARE\_TOKEN"{}}, \textcolor{stringliteral}{"{}PSUBGRAPH\_TOKEN"{}}, \textcolor{stringliteral}{"{}POPERATIONS\_TOKEN"{}}, \textcolor{stringliteral}{"{}GTYPE\_TOKEN"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}EDGE\_TOKEN"{}}, \textcolor{stringliteral}{"{}COMMA\_TOKEN"{}}, \textcolor{stringliteral}{"{}SEMICOLON\_TOKEN"{}}, \textcolor{stringliteral}{"{}COLOR\_TOKEN"{}}, \textcolor{stringliteral}{"{}IF\_TOKEN"{}}, \textcolor{stringliteral}{"{}LOOP\_TOKEN"{}}, \textcolor{stringliteral}{"{}OPERATION\_TOKEN"{}}, \textcolor{stringliteral}{"{}ARROW\_TOKEN"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}GSEARCH\_TOKEN"{}}, \textcolor{stringliteral}{"{}COLON\_TOKEN"{}}, \textcolor{stringliteral}{"{}EOF\_TOKEN"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Constant char$\ast$ array for mapping the token type to its string. 
+
